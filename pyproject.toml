@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "active-learning-platform"
+version = "1.0.0"
+description = "Active-learning platform built from scratch: uncertainty/diversity query strategies over from-scratch logistic regression and k-NN, fail-closed labelling budgets, a human-in-the-loop annotation queue with adjudication, retrain triggers, learning-curve evaluation vs random sampling, a gated model registry and latency-budgeted serving — all on seeded synthetic data."
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi>=0.110",
+    "uvicorn>=0.29",
+    "httpx>=0.27",
+]
+
+[tool.setuptools]
+packages = ["activelearn"]
+package-dir = {"" = "src"}
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
